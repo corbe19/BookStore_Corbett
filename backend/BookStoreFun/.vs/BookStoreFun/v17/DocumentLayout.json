@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\corbe\\OneDrive\\Desktop\\IS Core\\IS413\\BookStoreFun\\backend\\BookStoreFun\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B692BC38-A6CE-4F5F-91AE-D7E06AEFC547}|BookStoreFun\\BookStoreFun.csproj|c:\\users\\corbe\\onedrive\\desktop\\is core\\is413\\bookstorefun\\backend\\bookstorefun\\bookstorefun\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B692BC38-A6CE-4F5F-91AE-D7E06AEFC547}|BookStoreFun\\BookStoreFun.csproj|solutionrelative:bookstorefun\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B692BC38-A6CE-4F5F-91AE-D7E06AEFC547}|BookStoreFun\\BookStoreFun.csproj|c:\\users\\corbe\\onedrive\\desktop\\is core\\is413\\bookstorefun\\backend\\bookstorefun\\bookstorefun\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B692BC38-A6CE-4F5F-91AE-D7E06AEFC547}|BookStoreFun\\BookStoreFun.csproj|solutionrelative:bookstorefun\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B692BC38-A6CE-4F5F-91AE-D7E06AEFC547}|BookStoreFun\\BookStoreFun.csproj|c:\\users\\corbe\\onedrive\\desktop\\is core\\is413\\bookstorefun\\backend\\bookstorefun\\bookstorefun\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B692BC38-A6CE-4F5F-91AE-D7E06AEFC547}|BookStoreFun\\BookStoreFun.csproj|solutionrelative:bookstorefun\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B692BC38-A6CE-4F5F-91AE-D7E06AEFC547}|BookStoreFun\\BookStoreFun.csproj|c:\\users\\corbe\\onedrive\\desktop\\is core\\is413\\bookstorefun\\backend\\bookstorefun\\bookstorefun\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B692BC38-A6CE-4F5F-91AE-D7E06AEFC547}|BookStoreFun\\BookStoreFun.csproj|solutionrelative:bookstorefun\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B692BC38-A6CE-4F5F-91AE-D7E06AEFC547}|BookStoreFun\\BookStoreFun.csproj|c:\\users\\corbe\\onedrive\\desktop\\is core\\is413\\bookstorefun\\backend\\bookstorefun\\bookstorefun\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B692BC38-A6CE-4F5F-91AE-D7E06AEFC547}|BookStoreFun\\BookStoreFun.csproj|solutionrelative:bookstorefun\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B692BC38-A6CE-4F5F-91AE-D7E06AEFC547}|BookStoreFun\\BookStoreFun.csproj|c:\\users\\corbe\\onedrive\\desktop\\is core\\is413\\bookstorefun\\backend\\bookstorefun\\bookstorefun\\data\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,37 +34,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\corbe\\OneDrive\\Desktop\\IS Core\\IS413\\BookStoreFun\\backend\\BookStoreFun\\BookStoreFun\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "BookStoreFun\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\corbe\\OneDrive\\Desktop\\IS Core\\IS413\\BookStoreFun\\backend\\BookStoreFun\\BookStoreFun\\WeatherForecast.cs",
+              "RelativeToolTip": "BookStoreFun\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T01:46:31.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\corbe\\OneDrive\\Desktop\\IS Core\\IS413\\BookStoreFun\\backend\\BookStoreFun\\BookStoreFun\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "BookStoreFun\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\corbe\\OneDrive\\Desktop\\IS Core\\IS413\\BookStoreFun\\backend\\BookStoreFun\\BookStoreFun\\Properties\\launchSettings.json",
+              "RelativeToolTip": "BookStoreFun\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-19T01:40:26.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "BookController.cs",
               "DocumentMoniker": "C:\\Users\\corbe\\OneDrive\\Desktop\\IS Core\\IS413\\BookStoreFun\\backend\\BookStoreFun\\BookStoreFun\\Controllers\\BookController.cs",
               "RelativeDocumentMoniker": "BookStoreFun\\Controllers\\BookController.cs",
               "ToolTip": "C:\\Users\\corbe\\OneDrive\\Desktop\\IS Core\\IS413\\BookStoreFun\\backend\\BookStoreFun\\BookStoreFun\\Controllers\\BookController.cs",
               "RelativeToolTip": "BookStoreFun\\Controllers\\BookController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T16:22:16.671Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\corbe\\OneDrive\\Desktop\\IS Core\\IS413\\BookStoreFun\\backend\\BookStoreFun\\BookStoreFun\\Data\\Book.cs",
               "RelativeDocumentMoniker": "BookStoreFun\\Data\\Book.cs",
               "ToolTip": "C:\\Users\\corbe\\OneDrive\\Desktop\\IS Core\\IS413\\BookStoreFun\\backend\\BookStoreFun\\BookStoreFun\\Data\\Book.cs",
               "RelativeToolTip": "BookStoreFun\\Data\\Book.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T15:40:40.475Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\corbe\\OneDrive\\Desktop\\IS Core\\IS413\\BookStoreFun\\backend\\BookStoreFun\\BookStoreFun\\appsettings.json",
               "RelativeDocumentMoniker": "BookStoreFun\\appsettings.json",
@@ -64,18 +98,17 @@
               "RelativeToolTip": "BookStoreFun\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-17T15:31:37.798Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T15:31:37.798Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\corbe\\OneDrive\\Desktop\\IS Core\\IS413\\BookStoreFun\\backend\\BookStoreFun\\BookStoreFun\\Program.cs",
               "RelativeDocumentMoniker": "BookStoreFun\\Program.cs",
               "ToolTip": "C:\\Users\\corbe\\OneDrive\\Desktop\\IS Core\\IS413\\BookStoreFun\\backend\\BookStoreFun\\BookStoreFun\\Program.cs",
               "RelativeToolTip": "BookStoreFun\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T15:31:29.79Z",
               "EditorCaption": ""

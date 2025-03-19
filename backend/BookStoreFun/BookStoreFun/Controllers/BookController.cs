@@ -16,9 +16,9 @@ namespace BookStoreFun.Controllers
         [HttpGet(Name = "GetBowler")]
         public IEnumerable<Book> Get()
         {
-            var bowlerlist = _bookcontext.Books.ToList();
+            var booklist = _bookcontext.Books.ToList();
 
-            return (bowlerlist);
+            return (booklist);
         }
     }
 }
