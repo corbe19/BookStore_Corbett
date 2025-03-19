@@ -1,66 +1,103 @@
 import { useEffect, useState } from 'react';
 import { book } from '../types/book';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function BookList() {
   const [books, setBooks] = useState<book[]>([]);
+  const [pageSize, setPageSize] = useState<number>(5);
+  const [pageNum, setPageNum] = useState<number>(1);
+  const [totalItems, setTotalItems] = useState<number>(0);
+  const [totalPages, setTotalPages] = useState<number>(0);
 
   useEffect(() => {
     const fetchData = async () => {
-      const bookResponse = await fetch('https://localhost:5000/api/Book');
+      const bookResponse = await fetch(
+        `https://localhost:5000/api/Book?pageSize=${pageSize}&pageNum=${pageNum}`
+      );
       const bookData = await bookResponse.json();
-      setBooks(bookData);
+      setBooks(bookData.books);
+      setTotalItems(bookData.totalBooks);
+      setTotalPages(Math.ceil(totalItems / pageSize));
     };
 
     fetchData();
-  }, []);
+  }, [pageSize, pageNum]);
 
   return (
     <>
-      <table style={{ borderCollapse: 'collapse', width: '100%' }}>
-        <thead>
-          <tr>
-            <th style={styles.header}>Title</th>
-            <th style={styles.header}>Author</th>
-            <th style={styles.header}>Publisher</th>
-            <th style={styles.header}>ISBN</th>
-            <th style={styles.header}>Classification</th>
-            <th style={styles.header}>Category</th>
-            <th style={styles.header}>Number of Pages</th>
-            <th style={styles.header}>Price</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div className="container py-4">
+        <div className="row justify-content-center">
           {books.map((b) => (
-            <tr key={b.bookId}>
-              <td style={styles.cell}>{b.title}</td>
-              <td style={styles.cell}>{b.author}</td>
-              <td style={styles.cell}>{b.publisher}</td>
-              <td style={styles.cell}>{b.isbn}</td>
-              <td style={styles.cell}>{b.classification}</td>
-              <td style={styles.cell}>{b.category}</td>
-              <td style={styles.cell}>{b.pageCount}</td>
-              <td style={styles.cell}>{b.price}</td>
-            </tr>
+            <div key={b.bookId} className="col-md-6 col-lg-7 mb-4">
+              <div className="card bg-dark text-white shadow">
+                <div className="card-body">
+                  <h5 className="card-title">{b.title}</h5>
+                  <p className="card-text">
+                    <strong>Author:</strong> {b.author}
+                  </p>
+                  <p className="card-text">
+                    <strong>Publisher:</strong> {b.publisher}
+                  </p>
+                  <p className="card-text">
+                    <strong>ISBN:</strong> {b.isbn}
+                  </p>
+                  <p className="card-text">
+                    <strong>Classification:</strong> {b.classification}
+                  </p>
+                  <p className="card-text">
+                    <strong>Category:</strong> {b.category}
+                  </p>
+                  <p className="card-text">
+                    <strong>Number of Pages:</strong> {b.pageCount}
+                  </p>
+                  <p className="card-text">
+                    <strong>Price:</strong> ${b.price}
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
-        </tbody>
-      </table>
+        </div>
+      </div>
+
+      <button disabled={pageNum === 1} onClick={() => setPageNum(pageNum - 1)}>
+        Previous
+      </button>
+
+      {[...Array(totalPages)].map((_, index) => (
+        <button
+          key={index + 1}
+          onClick={() => setPageNum(index + 1)}
+          disabled={pageNum === index + 1}
+        >
+          {index + 1}
+        </button>
+      ))}
+
+      <button
+        disabled={pageNum === totalPages}
+        onClick={() => setPageNum(pageNum + 1)}
+      >
+        Next
+      </button>
+
+      <br />
+      <label>
+        Results per page:
+        <select
+          value={pageSize}
+          onChange={(p) => {
+            setPageSize(Number(p.target.value));
+            setPageNum(1);
+          }}
+        >
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+        </select>
+      </label>
     </>
   );
 }
-
-import { CSSProperties } from 'react';
-
-const styles: { [key: string]: CSSProperties } = {
-  header: {
-    border: '1px solid #000',
-    padding: '10px',
-    textAlign: 'left',
-    fontWeight: 'bold',
-  },
-  cell: {
-    border: '1px solid #000',
-    padding: '8px',
-  },
-};
 
 export default BookList;

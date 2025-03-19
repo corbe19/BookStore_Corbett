@@ -9,16 +9,26 @@ namespace BookStoreFun.Controllers
     {
         private BookstoreContext _bookcontext;
 
-        public BookController(BookstoreContext temp)
+        public BookController(BookstoreContext temp) => _bookcontext = temp;
+       
+        [HttpGet(Name = "GetBook")]
+        public IActionResult GetBooks(int pageSize = 5, int pageNum = 1)
         {
-            _bookcontext = temp;
-        }
-        [HttpGet(Name = "GetBowler")]
-        public IEnumerable<Book> Get()
-        {
-            var booklist = _bookcontext.Books.ToList();
+            var booklist = _bookcontext.Books
+                .Skip((pageNum - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
 
-            return (booklist);
+            var totalBooks = _bookcontext.Books.Count();
+
+            var someObject = new
+            {
+                TotalBooks = totalBooks,
+                Books = booklist
+            };
+
+            return Ok(someObject);
+
         }
     }
 }
