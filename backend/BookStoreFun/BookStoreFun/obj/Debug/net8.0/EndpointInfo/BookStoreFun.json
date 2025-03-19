@@ -29,6 +29,14 @@
               "format": "int32",
               "default": 1
             }
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "asc"
+            }
           }
         ],
         "responses": {

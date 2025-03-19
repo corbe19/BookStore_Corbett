@@ -8,23 +8,35 @@ function BookList() {
   const [pageNum, setPageNum] = useState<number>(1);
   const [totalItems, setTotalItems] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(0);
+  const [sortOrder, setSortOrder] = useState<string>('asc');
 
   useEffect(() => {
     const fetchData = async () => {
       const bookResponse = await fetch(
-        `https://localhost:5000/api/Book?pageSize=${pageSize}&pageNum=${pageNum}`
+        `https://localhost:5000/api/Book?pageSize=${pageSize}&pageNum=${pageNum}&sortOrder=${sortOrder}`
       );
       const bookData = await bookResponse.json();
       setBooks(bookData.books);
       setTotalItems(bookData.totalBooks);
-      setTotalPages(Math.ceil(totalItems / pageSize));
+      setTotalPages(Math.ceil(bookData.totalBooks / pageSize));
     };
 
     fetchData();
-  }, [pageSize, pageNum]);
+  }, [pageSize, pageNum, sortOrder]);
 
   return (
     <>
+      <h1 className="text-center">Book List</h1>
+      <label>
+        Sort by Title:
+        <select
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
+        >
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+      </label>
       <div className="container py-4">
         <div className="row justify-content-center">
           {books.map((b) => (

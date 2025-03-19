@@ -12,23 +12,35 @@ namespace BookStoreFun.Controllers
         public BookController(BookstoreContext temp) => _bookcontext = temp;
        
         [HttpGet(Name = "GetBook")]
-        public IActionResult GetBooks(int pageSize = 5, int pageNum = 1)
+        public IActionResult GetBooks(int pageSize = 5, int pageNum = 1, string sortOrder = "asc")
         {
-            var booklist = _bookcontext.Books
+            var booksQuery = _bookcontext.Books.AsQueryable();
+
+            // Apply sorting
+            if (sortOrder.ToLower() == "desc")
+            {
+                booksQuery = booksQuery.OrderByDescending(b => b.Title);
+            }
+            else
+            {
+                booksQuery = booksQuery.OrderBy(b => b.Title);
+            }
+
+            // Apply pagination
+            var booklist = booksQuery
                 .Skip((pageNum - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
 
             var totalBooks = _bookcontext.Books.Count();
 
-            var someObject = new
+            var response = new
             {
                 TotalBooks = totalBooks,
                 Books = booklist
             };
 
-            return Ok(someObject);
-
+            return Ok(response);
         }
     }
 }
