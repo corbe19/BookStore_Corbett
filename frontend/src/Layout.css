@@ -1,0 +1,24 @@
+.book-page-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* Optional: limit width of filter */
+.category-filter {
+  width: 250px;
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-right: 1px solid #ddd;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+}
+
+/* Let the book list take the rest of the space */
+.book-list-container {
+  flex: 1;
+  padding: 2rem;
+}

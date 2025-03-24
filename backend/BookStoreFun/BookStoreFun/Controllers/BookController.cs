@@ -12,27 +12,27 @@ namespace BookStoreFun.Controllers
         public BookController(BookstoreContext temp) => _bookcontext = temp;
        
         [HttpGet(Name = "GetBook")]
-        public IActionResult GetBooks(int pageSize = 5, int pageNum = 1, string sortOrder = "asc")
+        public IActionResult GetBooks(int pageSize = 5, int pageNum = 1, string sortOrder = "asc", [FromQuery] List<string>? category = null)
         {
             var booksQuery = _bookcontext.Books.AsQueryable();
 
+            if (category != null && category.Any())
+            {
+                booksQuery = booksQuery.Where(b => category.Contains(b.Category));
+            }
+
+            var totalBooks = booksQuery.Count();
+
             // Apply sorting
-            if (sortOrder.ToLower() == "desc")
-            {
-                booksQuery = booksQuery.OrderByDescending(b => b.Title);
-            }
-            else
-            {
-                booksQuery = booksQuery.OrderBy(b => b.Title);
-            }
+            booksQuery = sortOrder.ToLower() == "desc"
+                ? booksQuery.OrderByDescending(b => b.Title)
+                : booksQuery.OrderBy(b => b.Title);
 
             // Apply pagination
             var booklist = booksQuery
                 .Skip((pageNum - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
-
-            var totalBooks = _bookcontext.Books.Count();
 
             var response = new
             {
@@ -41,6 +41,17 @@ namespace BookStoreFun.Controllers
             };
 
             return Ok(response);
+        }
+
+        [HttpGet("GetBookCategories")]
+        public IActionResult GetBookCategories()
+        {
+            var categories = _bookcontext.Books
+                .Select(b => b.Category)
+                .Distinct()
+                .ToList();
+
+            return Ok(categories);
         }
     }
 }

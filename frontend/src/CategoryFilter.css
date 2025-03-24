@@ -1,0 +1,49 @@
+/* Container for the entire filter section */
+.category-filter {
+  width: 250px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-right: 1px solid #ddd;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Title styling */
+.category-filter h5 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Checkbox container */
+.category-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Checkbox input styling */
+.category-option input[type='checkbox'] {
+  margin-right: 0.5rem;
+  width: 16px;
+  height: 16px;
+  accent-color: #007bff;
+}
+
+/* Checkbox label styling */
+.category-option label {
+  font-size: 0.95rem;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Layout styling: filter on the left, main content on the right */
+.page-layout {
+  display: flex;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1.5rem;
+}

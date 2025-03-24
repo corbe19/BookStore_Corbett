@@ -37,7 +37,29 @@
               "type": "string",
               "default": "asc"
             }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Book/GetBookCategories": {
+      "get": {
+        "tags": [
+          "Book"
         ],
         "responses": {
           "200": {
