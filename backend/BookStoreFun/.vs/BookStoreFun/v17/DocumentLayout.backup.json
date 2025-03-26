@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "BookStoreFun\\Controllers\\BookController.cs",
               "ToolTip": "C:\\Users\\corbe\\OneDrive\\Desktop\\IS Core\\IS413\\BookStoreFun\\backend\\BookStoreFun\\BookStoreFun\\Controllers\\BookController.cs",
               "RelativeToolTip": "BookStoreFun\\Controllers\\BookController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T16:22:16.671Z",
               "EditorCaption": ""
@@ -71,8 +71,7 @@
               "RelativeToolTip": "BookStoreFun\\Data\\Book.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T15:40:40.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T15:40:40.475Z"
             },
             {
               "$type": "Document",
@@ -96,8 +95,7 @@
               "RelativeToolTip": "BookStoreFun\\Program.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAArwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T15:31:29.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T15:31:29.79Z"
             },
             {
               "$type": "Document",

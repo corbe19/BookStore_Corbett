@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
 import { book } from '../types/book';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
+import CartSummary from './CartSummary';
 
 function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [books, setBooks] = useState<book[]>([]);
   const [pageSize, setPageSize] = useState<number>(5);
   const [pageNum, setPageNum] = useState<number>(1);
-  const [totalItems, setTotalItems] = useState<number>(0);
+  const [, setTotalItems] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(0);
   const [sortOrder, setSortOrder] = useState<string>('asc');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,6 +33,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
 
   return (
     <>
+      <CartSummary />
       <div className="book-list-container">
         <h1 className="text-center">Book List</h1>
         <label>
@@ -70,6 +74,16 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
                     <p className="card-text">
                       <strong>Price:</strong> ${b.price}
                     </p>
+                    <button
+                      className="btn btn-success"
+                      onClick={() =>
+                        navigate(
+                          `/purchasequantity/${b.title}/${b.bookId}/${b.price}`
+                        )
+                      }
+                    >
+                      Buy
+                    </button>
                   </div>
                 </div>
               </div>
