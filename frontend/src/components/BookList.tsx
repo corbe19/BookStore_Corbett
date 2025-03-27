@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { book } from '../types/book';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
-import CartSummary from './CartSummary';
 
 function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [books, setBooks] = useState<book[]>([]);
