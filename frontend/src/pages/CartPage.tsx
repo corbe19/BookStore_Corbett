@@ -4,7 +4,21 @@ import { CartItem } from '../types/CartItem';
 
 function CartPage() {
   const navigate = useNavigate();
-  const { cart, removeFromCart } = useCart();
+  const { cart, removeFromCart, clearCart } = useCart();
+  const totalAmount = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  function handleClearCart() {
+    clearCart();
+    navigate('/books');
+    if (cart.length > 0) {
+      alert('Thank you for your purchase!');
+    } else {
+      alert('Broke boy.');
+    }
+  }
 
   return (
     <div>
@@ -26,8 +40,8 @@ function CartPage() {
           </ul>
         )}
       </div>
-      <h3>Total: </h3>
-      <button>Checkout</button>
+      <h3>Subtotal: {totalAmount.toFixed(2)}</h3>
+      <button onClick={() => handleClearCart()}>Checkout</button>
       <button onClick={() => navigate('/books')}>Continue Shopping</button>
     </div>
   );

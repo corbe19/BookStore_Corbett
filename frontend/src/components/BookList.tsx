@@ -33,7 +33,6 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
 
   return (
     <>
-      <CartSummary />
       <div className="book-list-container">
         <h1 className="text-center">Book List</h1>
         <label>
@@ -49,9 +48,15 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
         <div className="container py-4">
           <div className="row justify-content-center">
             {books.map((b) => (
-              <div key={b.bookId} className="col-md-6 col-lg-7 mb-4">
-                <div className="card bg-dark text-white shadow">
+              <div
+                key={b.bookId}
+                className="col-12 col-sm-8 col-md-6 col-lg-8 mb-4 fixed-card-width"
+              >
+                <div className="card bg-dark text-white shadow position-relative overflow-hidden">
                   <div className="card-body">
+                    <span className="badge bg-info text-dark position-absolute top-0 end-0 m-2 rounded-pill animate-badge">
+                      {b.category}
+                    </span>
                     <h5 className="card-title">{b.title}</h5>
                     <p className="card-text">
                       <strong>Author:</strong> {b.author}
@@ -75,6 +80,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
                       <strong>Price:</strong> ${b.price}
                     </p>
                     <button
+                      style={{ padding: '5px 30px', margin: '5px' }}
                       className="btn btn-success"
                       onClick={() =>
                         navigate(
@@ -82,6 +88,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
                         )
                       }
                     >
+                      <i className="bi bi-cart-plus me-2"></i>
                       Buy
                     </button>
                   </div>

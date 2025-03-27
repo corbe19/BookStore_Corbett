@@ -1,5 +1,4 @@
 import './App.css';
-import './Layout.css';
 import BooksPage from './pages/BooksPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BuyPage from './pages/BuyPage';
