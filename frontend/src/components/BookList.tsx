@@ -2,33 +2,43 @@ import { useEffect, useState } from 'react';
 import { book } from '../types/book';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
+import { fetchBooks } from '../api/BooksAPI';
+import Pagination from './Pagination';
 
 function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [books, setBooks] = useState<book[]>([]);
   const [pageSize, setPageSize] = useState<number>(5);
   const [pageNum, setPageNum] = useState<number>(1);
-  const [, setTotalItems] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(0);
   const [sortOrder, setSortOrder] = useState<string>('asc');
   const navigate = useNavigate();
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const categoryParams = selectedCategories
-        .map((c) => `category=${encodeURIComponent(c)}`)
-        .join('&');
+    const loadData = async () => {
+      try {
+        setIsLoading(true);
+        const bookData = await fetchBooks(
+          pageSize,
+          pageNum,
+          selectedCategories
+        );
 
-      const bookResponse = await fetch(
-        `https://localhost:5000/api/Book?pageSize=${pageSize}&pageNum=${pageNum}&sortOrder=${sortOrder}${selectedCategories.length ? `&${categoryParams}` : ''}`
-      );
-      const bookData = await bookResponse.json();
-      setBooks(bookData.books);
-      setTotalItems(bookData.totalBooks);
-      setTotalPages(Math.ceil(bookData.totalBooks / pageSize));
+        setBooks(bookData.books);
+        setTotalPages(Math.ceil(bookData.totalBooks / pageSize));
+      } catch (error) {
+        setError((error as Error).message);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
-    fetchData();
+    loadData();
   }, [pageSize, pageNum, sortOrder, selectedCategories]);
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p className="text-red-500">Error: {error}</p>;
 
   return (
     <>
@@ -94,48 +104,18 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
                 </div>
               </div>
             ))}
+            <Pagination
+              currentPage={pageNum}
+              totalPages={totalPages}
+              pageSize={pageSize}
+              onPageChange={(newPage) => setPageNum(newPage)}
+              onPageSizeChange={(newSize) => {
+                setPageSize(newSize);
+                setPageNum(1);
+              }}
+            />
           </div>
         </div>
-
-        <button
-          disabled={pageNum === 1}
-          onClick={() => setPageNum(pageNum - 1)}
-        >
-          Previous
-        </button>
-
-        {[...Array(totalPages)].map((_, index) => (
-          <button
-            key={index + 1}
-            onClick={() => setPageNum(index + 1)}
-            disabled={pageNum === index + 1}
-          >
-            {index + 1}
-          </button>
-        ))}
-
-        <button
-          disabled={pageNum === totalPages}
-          onClick={() => setPageNum(pageNum + 1)}
-        >
-          Next
-        </button>
-
-        <br />
-        <label>
-          Results per page:
-          <select
-            value={pageSize}
-            onChange={(p) => {
-              setPageSize(Number(p.target.value));
-              setPageNum(1);
-            }}
-          >
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-          </select>
-        </label>
       </div>
     </>
   );
