@@ -53,5 +53,50 @@ namespace BookStoreFun.Controllers
 
             return Ok(categories);
         }
+
+        [HttpPost("AddBook")]
+        public IActionResult AddBook([FromBody] Book newBook) 
+        {
+            _bookcontext.Books.Add(newBook);
+            _bookcontext.SaveChanges();
+            return Ok(newBook);
+        
+        }
+
+        [HttpPut("UpdateBook/{bookId}")]
+        public IActionResult UpdateBook(int bookId, [FromBody] Book updatedBook) 
+        {
+            var existingBook = _bookcontext.Books.Find(bookId);       
+
+            existingBook.Title = updatedBook.Title;
+            existingBook.Author = updatedBook.Author;
+            existingBook.Publisher = updatedBook.Publisher;
+            existingBook.Isbn = updatedBook.Isbn;
+            existingBook.Classification = updatedBook.Classification;
+            existingBook.Category = updatedBook.Category;
+            existingBook.PageCount = updatedBook.PageCount;
+            existingBook.Price = updatedBook.Price;
+
+            _bookcontext.Books.Update(existingBook);
+            _bookcontext.SaveChanges();
+
+            return Ok(existingBook);
+
+        }
+
+        [HttpDelete("DeleteBook/{bookId}")]
+        public IActionResult DeleteBook(int bookId)
+        {
+            var book = _bookcontext.Books.Find(bookId);
+
+            if (book == null)
+            {
+                return NotFound(new {message = "Book not found"});
+            }
+
+            _bookcontext.Books.Remove(book);
+            _bookcontext.SaveChanges();
+            return NoContent();
+        }
     }
 }
