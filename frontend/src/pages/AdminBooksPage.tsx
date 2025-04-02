@@ -29,7 +29,7 @@ const AdminBooksPages = () => {
     };
 
     loadBooks();
-  }, []);
+  }, [pageSize, pageNum]);
 
   const handleDelete = async (bookId: number) => {
     const comnfirmDelete = window.confirm(
