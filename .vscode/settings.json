@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/7fd64eca-bb8f-4852-ab00-defad50ca37f/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/BookStore-Corbett-Backend",
+  "appService.deploySubpath": "backend\\BookStoreFun\\BookStoreFun\\publish"
+}

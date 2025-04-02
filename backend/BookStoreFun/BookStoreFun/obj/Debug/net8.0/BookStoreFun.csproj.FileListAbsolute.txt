@@ -135,4 +135,4 @@ C:\Users\corbe\OneDrive\Desktop\IS Core\IS413\BookStoreFun\backend\BookStoreFun\
 C:\Users\corbe\OneDrive\Desktop\IS Core\IS413\BookStoreFun\backend\BookStoreFun\BookStoreFun\obj\Debug\net8.0\BookStoreFun.pdb
 C:\Users\corbe\OneDrive\Desktop\IS Core\IS413\BookStoreFun\backend\BookStoreFun\BookStoreFun\obj\Debug\net8.0\BookStoreFun.genruntimeconfig.cache
 C:\Users\corbe\OneDrive\Desktop\IS Core\IS413\BookStoreFun\backend\BookStoreFun\BookStoreFun\obj\Debug\net8.0\ref\BookStoreFun.dll
-C:\Users\corbe\OneDrive\Desktop\IS Core\IS413\BookStoreFun\backend\BookStoreFun\BookStoreFun\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\corbe\OneDrive\Desktop\IS Core\IS413\BookStoreFun\backend\BookStoreFun\BookStoreFun\bin\Debug\net8.0\Bookstore.sqlite
