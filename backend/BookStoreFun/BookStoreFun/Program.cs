@@ -17,7 +17,7 @@ builder.Services.AddDbContext<BookstoreContext>(options =>
 builder.Services.AddCors(options => options.AddPolicy("AllowReactApp",
     policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins("http://localhost:3000", "https://zealous-bay-0dfd3281e.6.azurestaticapps.net")
             .AllowAnyHeader()
             .AllowAnyMethod();
     }));
